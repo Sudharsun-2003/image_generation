@@ -1,0 +1,20 @@
+[
+    {
+        "scene_id": "32e1ecd3",
+        "video_id": "e7743ed6",
+        "prompt": "SQL Clause Order vs Execution Order",
+        "background": "#C9E4CA",
+        "orientation": "square",
+        "original_narration": "Here's the critical insight: SQL clauses are written in one order but executed in a completely different sequence...",
+        "timestamp": "2026-05-23T23:54:28.082288"
+    },
+    {
+        "scene_id": "6c7cd6ce",
+        "video_id": "e7743ed6",
+        "prompt": "illustration of two tables, users and orders, with visual connections between PRIMARY KEY, FOREIGN KEY, UNIQUE, and CHECK constraints",
+        "background": "#C9E4CA",
+        "orientation": "square",
+        "original_narration": "Let's see constraints in action. Imagine a users table with a PRIMARY KEY on user_id. Every user gets a unique identifier. Add a NOT NULL constraint on email—no user can exist without contact information. A UNIQUE constraint on username prevents duplicates. Now add an orders table with a FOREIGN KEY linking to users. You cannot create an order for a non-existent user. Add a CHECK constraint ensuring order_total is greater than zero. These constraints work silently in the background, preventing bad data from entering your system.",
+        "timestamp": "2026-05-24T00:06:29.026699"
+    }
+]
