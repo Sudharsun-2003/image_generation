@@ -24,7 +24,10 @@ class SceneFilter:
 
     def build_processed_scene(self, scene_data: Dict[str, Any], video_id: str) -> Scene:
         metadata = scene_data.get("scene_metadata", {})
-        template = scene_data.get("scene_template", "")
+        
+        # Extract from metadata as per actual API structure
+        template = metadata.get("scene_template", "")
+        title = metadata.get("scene_title", "")
         
         # Determine orientation
         orientation = self.orientation_service.get_orientation(template)
@@ -32,8 +35,8 @@ class SceneFilter:
         return Scene(
             video_id=video_id,
             scene_id=scene_data.get("scene_id", ""),
-            scene_index=scene_data.get("scene_index", 0),
-            scene_title=scene_data.get("scene_title", ""),
+            scene_index=int(scene_data.get("scene_index", 0)),
+            scene_title=title,
             scene_template=template,
             scene_type=metadata.get("scene_type", ""),
             orientation=orientation,
